@@ -1,0 +1,99 @@
+include folder for openssl
+
+1) /src/zephyr/include/openssl --> 74 files
+
+
+2) Libraries for linux 
+---------------------
+
+src\champagne_shared\src\zephyr\linux-64\openssl\lib
+
+
+openssl for linux path
+-------------------
+2) src/zephyr/linux-64/openssl
+
+3) src/zephyr/linux-64/openssl/include/openssl -> 75 files
+
+4)
+ ls -l
+total 11256
+-r--r--r-- 1 haramoha engr 4407602 Apr 22 01:12 libcrypto.a
+-r--r--r-- 1 haramoha engr 2609037 Apr 22 01:12 libcrypto.so
+-r--r--r-- 1 haramoha engr 2609037 Apr 22 01:12 libcrypto.so.1.0.2
+-r--r--r-- 1 haramoha engr  786986 Apr 22 01:12 libssl.a
+-r--r--r-- 1 haramoha engr  522111 Apr 22 01:12 libssl.so
+-r--r--r-- 1 haramoha engr  522111 Apr 22 01:12 libssl.so.1.0.2
+
+[haramoha@cycrh6svl07 lib]$ pwd
+/x/eng/build8/scratch/haramoha/p4/aw/Rchampagne5.2.4x-05/src/zephyr/linux-64/openssl/lib
+
+============================
+For Windows 
+------------
+src/zephyr/nt/openssl
+
+1) src/zephyr/nt/openssl/bin/X64
+openssl.exe
+
+2) src/zephyr/nt/openssl/include/openssl--> 74 files
+
+
+
+ ls
+ 
+1) libeay32.dll  
+2) libeay32.lib  
+3) ssleay32.dll  
+4) ssleay32.lib
+
+[haramoha@cycrh6svl07 X64]$ pwd
+/x/eng/build8/scratch/haramoha/p4/aw/Rchampagne5.2.4x-05/src/zephyr/nt/openssl/lib/X64
+[haramoha@cycrh6svl07 X64]$
+=============================================
+
+dfm license code::
+
+JSNCACNISQXGMA
+
+
+Build error
+
+
+
+Z:\aw_Rchampagne5.2.4x-05\src\zephyr\nt\openssl\include\openssl
+
+
+sha.h
+
+
+line 174
+
+ /* NetApp - U64 collides with libadt/generics.h so use OPENSSL_U64 instead of U64 */
+#  define SHA512_CBLOCK   (SHA_LBLOCK*8)
+#  if (defined(_WIN32) || defined(_WIN64)) && !defined(__MINGW32__)
+#   define SHA_LONG64 unsigned __int64
+#   define OPENSSL_U64(C)     C##UI64
+#  elif defined(__arch64__)
+#   define SHA_LONG64 unsigned long
+#   define OPENSSL_U64(C)     C##UL
+#  else
+#   define SHA_LONG64 unsigned long long
+#   define OPENSSL_U64(C)     C##ULL
+#  endif
+========================================================================
+
+In the below path , openssl & httpd stuffs need to be placed
+
+src/champagne_shared/nt64/conf
+
+
+
+[haramoha@cycrh6svl13 src]$ find . -name openssl.exe
+./zephyr/nt-debug/openssl/bin/openssl.exe
+./zephyr/nt/openssl/bin/IA64/openssl.exe
+[haramoha@cycrh6svl13 src]$ ls
+
+
+
+

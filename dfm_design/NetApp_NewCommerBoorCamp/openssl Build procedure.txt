@@ -1,0 +1,36 @@
+
+fifp build
+------------------
+
+ms\do_fips
+
+
+======fifp link below=============================
+
+
+http://gpinzone.blogspot.com/2017/12/openssl-fips-140-2-part-three-windows-os.html
+
+https://wiki.openssl.org/index.php/Compilation_and_Installation
+
+=====================================================================================================================
+
+c:\openssl-1.0.2r>  
+
+--prefix=C:\Apache24 --openssldir=C:\Apache24\conf 
+
+perl Configure VC-WIN64A fips no-krb5 no-rc5 no-idea no-asm no-srp  no-ssl2  fips --with-fipsdir=C:\usr\local\ssl\fips-2.0  --prefix=C:\Apache24 --openssldir=C:\Apache24\conf 
+ms\do_win64a
+nmake -f ms\nt.mak
+nmake -f ms\nt.mak install
+
+
+
+
+C:\openssl_x64
+
+
+perl Configure VC-WIN32 --prefix=C:\openssl-src-32
+ms\do_win64a
+nmake -f ms\ntdll.mak
+nmake -f ms\ntdll.mak test
+nmake -f ms\ntdll.mak install
